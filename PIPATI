@@ -1,0 +1,59 @@
+import java.util.Scanner;
+import java.util.Random;
+public class PPT {
+    public static void main(String[] args) {
+        //juego PIEDRA PAPEL TIJERA
+        Random MAQUINA = new Random();
+        int Compu = MAQUINA.nextInt(3 - 1 + 1) + 1;
+        Scanner read = new Scanner(System.in);
+        System.out.println("BINEVENIDO AL PIEDRA PAPEL TIJERA ");
+        System.out.println("1-JUGAR");
+        System.out.println("2-SALIR");
+        int menu= read.nextInt();
+        int contador=0;
+        while (contador < 3) {
+            switch (menu) {
+                case 1 -> {
+                    System.out.println("Ingrese un numero para seleccionar una opcion 1TIJERA, 2PAPEL, 3PIEDRA");
+                    int JUGADOR = read.nextInt();
+                    PiPaTi(JUGADOR, Compu);
+                    contador++;
+                    System.out.println("mano N°"+ (contador));
+                }
+                case 2 -> {
+                    System.out.println("GRACIAS POR JUGAR");
+                    contador=3;
+
+                }
+            }
+
+
+        }
+
+    }
+    public static void PiPaTi(int JUGADOR, int Compu) {
+        if (JUGADOR == Compu) {
+            System.out.print("elegi el mismo: ");
+            System.out.println("empate");
+        }
+        if (JUGADOR == 1 && Compu == 2) {
+            System.out.print("eligo papel: ");
+            System.out.println("Ganaste");
+        } else if (JUGADOR == 1 && Compu == 3) {
+            System.out.print("eligo piedra:");
+            System.out.println("Perdiste");
+        } else if (JUGADOR == 2 && Compu == 3) {
+            System.out.println("eligo piedra: ");
+            System.out.println("Ganaste ");
+        }else if (JUGADOR == 2 && Compu == 1) {
+            System.out.println("eligo tijera: ");
+            System.out.println("Perdiste");
+        } else if (JUGADOR == 3 && Compu == 1) {
+            System.out.println("eligo tijera: ");
+            System.out.println("Ganaste");
+        }else if (JUGADOR == 3 && Compu == 2) {
+            System.out.println("eligo papel: ");
+            System.out.println("Perdiste");
+        }
+    }
+}
