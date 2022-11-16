@@ -1,0 +1,205 @@
+public class Main {
+
+    public static void main(String[] args) {
+       Fecha agosto = new Fecha(3,8,2022);
+       Hora maniana = new Hora(7,30);
+
+        Examen matematicas = new Examen("matematicas","A 5",agosto,maniana,"Nicolas Olivera",8);
+
+
+        System.out.println (matematicas.Datos());
+        matematicas.Notas();
+    }
+}
+public class Examen {
+    private String asignatura;
+    private String aula;
+    private Fecha anioMesDia;
+    private Hora horayMinuto;
+    private String nombreYApellido;
+    private double nota;
+
+
+    public Examen(String asignatura, String aula, Fecha anioMesDia, Hora horayMinuto, String nombreYApellido, double nota) {
+        this.asignatura = asignatura;
+        this.aula = aula;
+        this.anioMesDia = anioMesDia;
+        this.horayMinuto = horayMinuto;
+        this.nombreYApellido = nombreYApellido;
+        this.nota = nota;
+    }
+
+    public Examen(Fecha anioMesDia, Hora horayMinuto) {
+        this.anioMesDia = anioMesDia;
+        this.horayMinuto = horayMinuto;
+    }
+
+    public String getAsignatura() {
+        return this.asignatura;
+    }
+
+    public void setAsignatura(String asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public String getAula() {
+        return this.aula;
+    }
+
+    public void setAula(String aula) {
+        this.aula = aula;
+    }
+
+    public Fecha getAnioMesDia() {
+        return this.anioMesDia;
+    }
+
+    public void setAnioMesDia(Fecha anioMesDia) {
+        this.anioMesDia = anioMesDia;
+    }
+
+    public Hora getHorayMinuto() {
+        return this.horayMinuto;
+    }
+
+    public void setHorayMinuto(Hora horayMinuto) {
+        this.horayMinuto = horayMinuto;
+    }
+
+    public String getNombreYApellido() {
+        return this.nombreYApellido;
+    }
+
+    public void setNombreYApellido(String nombreYApellido) {
+        this.nombreYApellido = nombreYApellido;
+    }
+
+    public double getNota() {
+        return this.nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+
+
+    public String Datos() {
+        return "Examen{" +
+                "La asignatura" + asignatura + '\'' +
+                ",  en el aula='" + aula + '\'' +
+                ", alumno='" + nombreYApellido + '\'' +
+                ", nota=" + nota +
+                "Fecha=" + anioMesDia +
+                ", Hora=" + horayMinuto +
+                '}';
+    }
+
+
+
+
+    public String Notas(){
+        System.out.println(nota);
+        if (nota>10){
+            System.out.println("error");
+
+        }
+        return  "error es mayor que 10";
+    }
+}
+
+public class Hora {
+  private int horaprecisa;
+  private int minutoprecisa;
+
+  public Hora(int hora, int minuto) {
+    this.horaprecisa = hora;
+    this.minutoprecisa = minuto;
+  }
+
+    public int getHoraprecisa() {
+        return this.horaprecisa;
+    }
+
+    public void setHoraprecisa(int horaprecisa) {
+        this.horaprecisa = horaprecisa;
+    }
+
+    public int getMinutoprecisa() {
+        return this.minutoprecisa;
+    }
+
+    public void setMinutoprecisa(int minutoprecisa) {
+        this.minutoprecisa = minutoprecisa;
+    }
+
+
+
+
+
+
+
+  @Override
+  public String toString() {
+    return "hora=" + horaprecisa +":"+minutoprecisa
+            ;
+  }
+}
+
+public class Fecha {
+    private int dia;
+    private int  mes;
+
+    private int anio;
+
+    public Fecha(int dia, int mes, int anio) {
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
+    }
+
+    public int getDia() {
+        return this.dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getMes() {
+        return this.mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public void dia(){
+
+    }
+    public void mes(){
+
+    }
+    public void anio(){
+
+    }
+
+    @Override
+    public String toString() {
+        return + dia + "/"
+                 + mes + "/"
+                + anio + "/"
+                ;
+    }
+}
+
+
+
